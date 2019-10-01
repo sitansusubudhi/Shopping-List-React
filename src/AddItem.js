@@ -12,6 +12,9 @@ state = {
    addItem = event => {
     event.preventDefault();
     this.props.addItem(this.state.text);
+     this.setState(() => ({
+     	text: ''
+     }));
   };
 
    inputIsEmpty = () => {
@@ -34,8 +37,9 @@ state = {
               value={this.state.text}
               onChange={this.handleChange}
             />
-			</form>
+
 			<button disabled={this.inputIsEmpty()}>Add</button>
+			</form>
 			</div>
       	)
     }

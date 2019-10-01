@@ -10,10 +10,6 @@ class App extends React.Component {
     items: [],
   };
 
-  handleChange = event => {
-    this.setState({ value: event.target.value });
-  };
-
   handleAddItem = item => {
     this.setState(oldState => ({
       items: [...oldState.items, item],
@@ -24,9 +20,6 @@ class App extends React.Component {
     this.setState(prevState => ({ items: this.state.items.slice(0, -1) }));
   };
 
-  inputIsEmpty = () => {
-    return this.state.value === '';
-  };
 
   noItemsFound = () => {
     return this.state.items.length === 0;
